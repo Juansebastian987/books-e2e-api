@@ -1,0 +1,26 @@
+{
+  "name": "books-e2e-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "axios": "^0.21.1",
+    "chai": "^4.3.4",
+    "faker": "^5.4.0",
+    "mocha": "^8.3.2"
+  },
+  "scripts": {
+    "test": "mocha e2e/**/*.spec.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Juansebastian987/books-e2e-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Juansebastian987/books-e2e-api/issues"
+  },
+  "homepage": "https://github.com/Juansebastian987/books-e2e-api#readme"
+}
