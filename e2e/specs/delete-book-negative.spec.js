@@ -12,16 +12,12 @@ const book = {
     "author":`Mr. ${random.word(2)}`
     };
 
-describe ("Given a book created", () => {
     /**
      * Act
      */
-	before(async() => {
-        response =await axios.post('https://integracion-continua-back.herokuapp.com/books', book)
-    });
     describe ("Delete the book created", () => {
         before(async() => {
-            response2 = await axios.delete(`https://integracion-continua-back.herokuapp.com/books/${response.data.id}`)
+            response2 = await axios.delete(`https://integracion-continua-back.herokuapp.com/books/0`)
         });
 
         /**
@@ -34,4 +30,3 @@ describe ("Given a book created", () => {
             expect(response2.data).to.have.length(0);
         });
     });
-});

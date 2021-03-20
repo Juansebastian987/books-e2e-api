@@ -1,16 +1,20 @@
-
 const axios = require('axios');
 const { expect } = require('chai');
+
    /**
      * Arrange
     */
 let response;
-let vacio =[]; 
+
+const book = {
+    "name": "Clase QA",
+    "author": "Juan Sebastian Cardona"
+    };
 
     /**
      * Act
      */
-describe ("When the user wants to list books and it is completely empty", () => {
+describe ("When the user wants to list books", () => {
 	before(async ()=>{
 	  response = await axios.get('https://integracion-continua-back.herokuapp.com/books');
     });
@@ -21,8 +25,11 @@ describe ("When the user wants to list books and it is completely empty", () => 
     it("Then it should return an OK status code", () => {
         expect(response.status).eql(200);
     });
-    it("Then it should return a empty list.", () => {
-        const book = null;
-        expect(vacio).to.be.empty;
+    it("Then it should return book with autor, id and name.", () => {
+        expect(response.data.length).to.be.greaterThan(0);
+        for(var i=0;i<response.data.length;i++){
+            const bookResponse = response.data[i];
+            expect(bookResponse.name).to.not.equal(book.name);
+        } 
     });
 });

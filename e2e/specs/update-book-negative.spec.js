@@ -52,9 +52,9 @@ describe ("Given a created book for Update Author", () => {
         });
 
         /**
-         * Clean DataBase
+         * Clean Back-End
          */
-        describe ("Clean the DB of the created information", () => {
+        describe ("Clean the back of the created information", () => {
             before(async() => {
                 response3 = await axios.delete(`https://integracion-continua-back.herokuapp.com/books/${response.data.id}`)
             });
@@ -89,9 +89,9 @@ describe ("Given a created book for Update Name", () => {
         });
 
         /**
-         * Clean DataBase
+         * Clean Back-End
          */
-        describe ("Clean the DB of the created information", () => {
+        describe ("Clean the back of the created information", () => {
             before(async() => {
                 response6 = await axios.delete(`https://integracion-continua-back.herokuapp.com/books/${response4.data.id}`)
             });

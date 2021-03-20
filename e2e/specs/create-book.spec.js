@@ -40,9 +40,9 @@ describe ("When the user wants to create a book", () => {
     });
 
     /**
-     * Clean DataBase
+     * Clean Back-End
      */
-    describe ("Clean the DB of the created information", () => {
+    describe ("Clean the Back of the created information", () => {
         before(async() => {
             response2 = await axios.delete(`https://integracion-continua-back.herokuapp.com/books/${response.data.id}`)
         });
