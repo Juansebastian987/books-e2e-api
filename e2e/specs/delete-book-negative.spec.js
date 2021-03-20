@@ -1,6 +1,7 @@
 const axios = require('axios');
 const { expect } = require('chai');
 const {random} = require('faker');
+
     /**
      * Arrange
      */
@@ -10,11 +11,11 @@ const book = {
     "name":random.word(10),
     "author":`Mr. ${random.word(2)}`
     };
-    
+
+describe ("Given a book created", () => {
     /**
      * Act
      */
-describe ("Given a book created", () => {
 	before(async() => {
         response =await axios.post('https://integracion-continua-back.herokuapp.com/books', book)
     });
@@ -24,10 +25,13 @@ describe ("Given a book created", () => {
         });
 
         /**
-         * Assert
+        * Assert
          */
         it("Then should return a delete status code",()=>{
             expect(response2.status).eql(200);
+        });
+        it("Then should return a Json as content type",()=>{
+            expect(response2.data).to.have.length(0);
         });
     });
 });
